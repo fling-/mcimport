@@ -198,6 +198,8 @@
 56	default:stone_with_diamond
 57	default:diamondblock
 
+58	crafting:workbench
+
 59 0	farming:wheat_1
 59 1 	farming:wheat_2
 59 2 	farming:wheat_3

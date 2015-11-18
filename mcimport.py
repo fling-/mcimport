@@ -23,6 +23,7 @@ if not os.path.exists(sys.argv[2] + "/world.mt"):
     wo.write("gameid = minetest\n")
     wo.write("load_mod_biome_lib = true\n")
     wo.write("load_mod_bushes_classic = true\n")
+    wo.write("load_mod_crafting = true\n")
     wo.write("load_mod_ferns = true\n")
     wo.write("load_mod_flowers_plus = true\n")
     wo.write("load_mod_homedecor = true\n")
