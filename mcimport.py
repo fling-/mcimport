@@ -27,6 +27,7 @@ if not os.path.exists(sys.argv[2] + "/world.mt"):
     wo.write("load_mod_flowers_plus = true\n")
     wo.write("load_mod_homedecor = true\n")
     wo.write("load_mod_junglegrass = true\n")
+    wo.write("load_mod_lapis = true\n")
     wo.write("load_mod_mesecons = true\n")
     wo.write("load_mod_moreblocks = true\n")
     wo.write("load_mod_moretrees = true\n")

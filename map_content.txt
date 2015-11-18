@@ -82,7 +82,8 @@
 
 19	default:nyancat_rainbow			// Sponge
 20	default:glass
-21	default:stone				// FIXME: Lapis Lazuli
+21	lapis:stone_with_lapis
+22	lapis:lapisblock
 24	default:sandstone			// TODO: Sandstone type
 27	default:rail				// Powered rail
 28	default:rail				// Detector rail
