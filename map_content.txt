@@ -564,7 +564,24 @@
 139 1	default:mossycobble			// FIXME: you may not want this
 139	default:cobble				// FIXME: you may not want this
 
-140	homedecor:flower_pot_small
+# TODO: Decide to convert or not potted mushrooms/saplings
+# to flowers instead of empty pots:
+140 0	homedecor:flower_pot_terracotta
+140 1	homedecor:potted_rose
+140 2	homedecor:potted_dandelion_yellow
+140 3	homedecor:flower_pot_green		// Oak sapling Flower Pot
+140 4	homedecor:flower_pot_green		// Spruce sapling Flower Pot
+140 5	homedecor:flower_pot_green		// Birch sapling Flower Pot
+140 6	homedecor:flower_pot_green		// Jungle sapling Flower Pot
+140 7	homedecor:flower_pot_black		// Red mushroom Flower Pot
+140 8	homedecor:flower_pot_black		// Brown mushroom Flower Pot
+140 9	homedecor:potted_cactus
+140 10	homedecor:flower_pot_black		// Dead bush Flower Pot
+140 11	homedecor:potted_bonsai
+140 12	homedecor:flower_pot_green		// Acacia sapling Flower Pot
+140 13	homedecor:flower_pot_green		// Dark oak sapling Flower Pot
+140 14	homedecor:flower_pot_black		// Unknown
+140 15	homedecor:flower_pot_black		// Unknown
 
 143 0	mesecons_button:button_off 8
 143 1	mesecons_button:button_off 1
