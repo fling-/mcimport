@@ -1,6 +1,7 @@
 import os
 import zlib
 import nbt
+import random
 from io import BytesIO
 import sqlite3
 from serialize import *
@@ -208,6 +209,7 @@ class MTBlock:
     def fromMCBlock(self, mcblock, conversion_table):
 #        print('\n***fromMCBlock: Starting New Block***')
 
+        self.timers = []
         self.pos = (mcblock.pos[0], mcblock.pos[1]-4, mcblock.pos[2])
         content = self.content
         mcblockidentifier = self.mcblockidentifier
@@ -225,6 +227,13 @@ class MTBlock:
             mcblockidentifier[i] = str(blocks[i]) + ':' + str(data[i])
             if content[i]==0 and param2[i]==0 and not (blocks[i]==0):
                 print('Unknown Minecraft Block:' + str(mcblockidentifier[i]))     # This is the minecraft ID#/data as listed in map_content.txt
+
+            if blocks[i] == 70 or blocks[i] == 72:
+                self.timers.append(((i&0xf)|((i>>4)&0xf)<<8|((i>>8)&0xf)<<4, 100, 0))
+            elif blocks[i] == 111:
+                param2[i] = random.randint(0,3)
+            elif blocks[i] == 31 and data[i] == 1:
+                content[i], param2[i] = conversion_table[931][random.randint(0,4)]
 
         for te in mcblock.tile_entities:
             id = te["id"]
@@ -332,7 +341,13 @@ class MTBlock:
 
         # Node timer
         writeU8(os, 2+4+4) # Timer data len
-        writeU16(os, 0) # Number of timers
+        writeU16(os, len(self.timers)) # Number of timers
+        if len(self.timers) > 0:
+            print('wrote ' + str(len(self.timers)) + ' node timers')
+        for i in range(len(self.timers)):
+            writeU16(os, self.timers[i][0])
+            writeU32(os, self.timers[i][1])
+            writeU32(os, self.timers[i][2])
 
         return os.getvalue()
 
