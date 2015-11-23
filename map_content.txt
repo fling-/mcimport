@@ -478,6 +478,7 @@
 
 #if NETHER
 	112	nether:brick
+	113	nether:fence_nether_brick
 #endif
 
 114 0	stairs:stair_nether_brick 3
